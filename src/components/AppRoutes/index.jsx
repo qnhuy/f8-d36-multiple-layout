@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route, HashRouter } from 'react-router-dom'
 
 import DefaultLayout from '../../layouts/DefaultLayout'
 import Home from '../../pages/Home'
@@ -22,7 +22,7 @@ import Contact from '../../pages/Contact'
 
 export default function AppRoutes() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <ScrollToTop />
             
             <Routes>
@@ -48,6 +48,6 @@ export default function AppRoutes() {
 
                 <Route path='*' element={<NotFound />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
