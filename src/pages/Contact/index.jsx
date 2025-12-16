@@ -1,7 +1,7 @@
-export default function Privacy() {
+export default function Contact() {
     return (
         <div>
-            <h1>Privacy</h1>
+            <h1>Contact</h1>
 
             <div>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.

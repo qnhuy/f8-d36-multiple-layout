@@ -18,6 +18,7 @@ import Setting from '../../pages/Setting'
 
 import NotFound from '../../pages/NotFound'
 import ScrollToTop from '../ScrollToTop'
+import Contact from '../../pages/Contact'
 
 export default function AppRoutes() {
     return (
@@ -31,6 +32,7 @@ export default function AppRoutes() {
                     <Route path='posts' element={<Posts />} />
                     <Route path='posts/:id' element={<PostDetails />} />
                     <Route path='privacy' element={<Privacy />} />
+                    <Route path='contact' element={<Contact />} />
                 </Route>
 
                 <Route element={<AuthLayout />}>
