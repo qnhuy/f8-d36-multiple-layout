@@ -1,0 +1,62 @@
+.postDetailsContainer {
+    width: 80%;
+    min-width: 400px;
+    margin: 0 auto;
+}
+
+.post {
+
+}
+
+.postTitle {
+    margin-bottom: 8px;
+}
+
+.userId {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.postBody {
+
+}
+
+.commentList {
+    list-style: none;
+}
+
+.noComment {
+    font-style: italic;
+    color: rgb(200, 200, 200);
+}
+
+.commentItem {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cccccc58;
+    margin-bottom: 16px;
+}
+
+.commentItem:last-child {
+    border-bottom: none;
+}
+
+.commentHeader {
+    display: flex;
+    gap: 10px;
+}
+
+.commentName {
+    font-weight: 500;
+    margin: 0;
+}
+
+.commentEmail {
+    font-size: 0.8rem;
+    justify-self: left;
+    line-height: 1.7rem;
+}
+
+.commentBody {
+
+    margin: 8px 0 10px;
+}
