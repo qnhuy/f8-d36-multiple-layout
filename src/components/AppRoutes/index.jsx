@@ -17,10 +17,13 @@ import Users from '../../pages/Users'
 import Setting from '../../pages/Setting'
 
 import NotFound from '../../pages/NotFound'
+import ScrollToTop from '../ScrollToTop'
 
 export default function AppRoutes() {
     return (
         <BrowserRouter>
+            <ScrollToTop />
+            
             <Routes>
                 <Route element={<DefaultLayout />}>
                     <Route index element={<Home />} />
