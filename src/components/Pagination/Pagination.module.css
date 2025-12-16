@@ -1,0 +1,35 @@
+.paginationWrapper {
+    list-style: none;
+    display: flex;
+}
+
+.pagination {
+    padding: 2px 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.pagination:hover {
+    background-color: #ccc;
+}
+
+.changePageIcon {
+    display: grid;
+    place-items: center;
+}
+
+.active {
+    background-color: #ccc;
+    pointer-events: none;
+}
+
+.disabled {
+    pointer-events: none;
+    background-color: #e4e4e4;
+    color: #b9b9b9;
+    border-color: #c5c5c5;
+}
