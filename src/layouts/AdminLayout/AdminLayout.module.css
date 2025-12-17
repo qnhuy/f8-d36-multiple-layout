@@ -1,0 +1,11 @@
+.layoutContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.mainContent {
+    flex: 1;
+    display: grid;
+    grid-template-columns: auto 200px;
+}

@@ -1,0 +1,10 @@
+.footerContainer {
+    padding: 20px 40px;
+    background-color: rgb(143 177 128);
+}
+
+.footerContainer span {
+    color: black;
+    font-size: 0.9rem;
+    font-weight: 500;
+}

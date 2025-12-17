@@ -1,0 +1,43 @@
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+}
+
+.left {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.leftContent {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.leftContent:hover {
+    color: var(--primary-color);
+}
+
+.nav {
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    gap: 26px;
+}
+
+.navItem {
+}
+
+.navContent {
+    color: var(--text-color);
+    transition: all 0.2s;
+}
+
+.navItem:hover .navContent {
+    opacity: 0.7;
+    color: var(--primary-color);
+}

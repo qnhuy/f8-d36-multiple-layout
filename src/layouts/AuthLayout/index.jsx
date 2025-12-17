@@ -1,19 +1,16 @@
 import { Outlet } from 'react-router-dom'
 import Header from '../components/Header'
 import AuthSidebar from './components/AuthSidebar'
+import styles from './AuthLayout.module.css'
 
 export default function AuthLayout() {
     return (
-        <div>
-            <h1>Auth Layout</h1>
+        <div className={styles.layoutContainer}>
+            <Header />
 
-            <div>
-                <Header />
-                
-                <div>
-                    <AuthSidebar />
-                    <Outlet />
-                </div>
+            <div className={styles.layoutContent}>
+                <AuthSidebar />
+                <Outlet />
             </div>
         </div>
     )

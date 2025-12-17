@@ -1,0 +1,21 @@
+.pageContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+.navigate {
+    color: var(--primary-color);
+    transition: all 0.2s;
+}
+
+.navigate:hover {
+    color: var(--primary-color);
+    opacity: 0.7;
+}

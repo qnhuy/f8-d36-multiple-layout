@@ -1,23 +1,42 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
+import styles from './AdminSidebar.module.css'
+
+const navigates = [
+    {
+        path: '/admin',
+        title: 'Dashboard',
+    },
+    {
+        path: '/admin/users',
+        title: 'Users',
+    },
+    {
+        path: '/admin/setting',
+        title: 'Setting',
+    },
+]
 
 export default function AdminSidebar() {
-    return (
-        <div>
-            <h1>Admin Footer</h1>
+    const location = useLocation()
 
-            <div>
-                <ul>
-                    <li>
-                        <NavLink to='/admin'>Dashboard</NavLink>
+    return (
+        <nav className={styles.sidebarContainer}>
+            <ul className={styles.list}>
+                {navigates.map((navigate) => (
+                    <li key={navigate.path} className={styles.item}>
+                        <NavLink
+                            to={navigate.path}
+                            className={`
+                                text-hover-primary
+                                ${styles.content} 
+                                ${location.pathname === navigate.path ? styles.active : ''}
+                            `}
+                        >
+                            {navigate.title}
+                        </NavLink>
                     </li>
-                    <li>
-                        <NavLink to='/admin/users'>Users</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/admin/setting'>Setting</NavLink>
-                    </li>
-                </ul>
-            </div>
-        </div>
+                ))}
+            </ul>
+        </nav>
     )
 }

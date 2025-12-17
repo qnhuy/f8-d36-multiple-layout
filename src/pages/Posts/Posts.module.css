@@ -1,0 +1,23 @@
+.postsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin: 20px 0;
+    color: var(--primary-color);
+}
+
+.postList {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.postItem {
+    margin-bottom: 8px;
+}
+
+.postContent {
+
+}

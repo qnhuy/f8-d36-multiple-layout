@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import Loading from '../../components/Loading'
-// import styles from './Posts.module.css'
+import styles from './Posts.module.css'
 import Pagination from '../../components/Pagination'
 
 export default function Posts() {
@@ -10,14 +10,21 @@ export default function Posts() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [page, setPage] = useState(parseInt(searchParams.get('page')) || 1)
 
-    useEffect(() => {
+    async function fetchPosts(newPage = page) {
         fetch(
-            `https://jsonplaceholder.typicode.com/posts?_limit=20&_page=${page}`
+            `https://jsonplaceholder.typicode.com/posts?_limit=20&_page=${newPage}`
         )
             .then((response) => response.json())
-            .then((posts) => setPosts(posts))
+            .then((posts) => {
+                setPosts(posts)
+                setPage(newPage)
+            })
             .catch((error) => console.error('Error fetching posts:', error))
             .finally(() => setIsLoading(false))
+    }
+
+    useEffect(() => {
+        fetchPosts()
     }, [page])
 
     useEffect(() => {
@@ -25,19 +32,23 @@ export default function Posts() {
     }, [setSearchParams, page])
 
     function handleChangePage(newPage) {
-        setPage(newPage)
+        setIsLoading(true)
+        fetchPosts(newPage)
     }
 
     return (
-        <div>
+        <div className={styles.postsContainer}>
             {isLoading && <Loading />}
 
-            <h1>Posts</h1>
+            <h1 className={styles.title}>Posts</h1>
 
-            <ul>
+            <ul className={styles.postList}>
                 {posts.map((post) => (
-                    <li key={post.id}>
-                        <Link to={`/posts/${post.id}`}>
+                    <li key={post.id} className={styles.postItem}>
+                        <Link
+                            to={`/posts/${post.id}`}
+                            className='text-hover-primary'
+                        >
                             {post.id}. {post.title}
                         </Link>
                     </li>

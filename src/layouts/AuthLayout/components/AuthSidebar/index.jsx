@@ -1,16 +1,31 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import styles from './AuthSidebar.module.css'
+
+const navbar = [
+    { title: 'Login', to: '/login' },
+    { title: 'Register', to: '/register' },
+    { title: 'Forgot Password', to: '/forgot-password' },
+]
 
 export default function AuthSidebar() {
     return (
-        <div>
-            <h1>Auth Sidebar</h1>
-
-            <div>
-                <Link to='/login' style={{ display: 'block' }}>
-                    Login
-                </Link>
-                <Link to='/register'>Register</Link>
-            </div>
-        </div>
+        <nav className={styles.sidebarContainer}>
+            <ul className={styles.list}>
+                {navbar.map((item) => (
+                    <li key={item.title} className={styles.item}>
+                        <NavLink
+                            to={item.to}
+                            className={({ isActive }) => `
+                                text-hover-primary
+                                ${styles.content}
+                                ${isActive ? styles.active : ''}
+                            `}
+                        >
+                            {item.title}
+                        </NavLink>
+                    </li>
+                ))}
+            </ul>
+        </nav>
     )
 }

@@ -5,6 +5,7 @@
 }
 
 .post {
+    margin-bottom: 70px;
 }
 
 .postTitle {
@@ -12,15 +13,17 @@
 }
 
 .userId {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin: 0;
 }
 
 .postBody {
+    margin-bottom: 30px;
 }
 
 .commentList {
     list-style: none;
+    margin-top: 20px;
 }
 
 .noComment {
@@ -51,7 +54,7 @@
 .commentEmail {
     font-size: 0.8rem;
     justify-self: left;
-    line-height: 1.7rem;
+    line-height: 1.6rem;
 }
 
 .commentBody {

@@ -11,7 +11,7 @@ export default function Pagination({ currentPage, totalPage, onPageChange }) {
                 className={`${movePageClassName} ${canMovePrevClassName}`}
                 onClick={() => onPageChange(1)}
             >
-                {'|<<'}
+                <span>{'|<<'}</span>
             </li>
             <li
                 className={`${movePageClassName} ${canMovePrevClassName}`}
@@ -21,7 +21,7 @@ export default function Pagination({ currentPage, totalPage, onPageChange }) {
                     }
                 }}
             >
-                {'<'}
+                <span>{'<'}</span>
             </li>
 
             {Array(totalPage)
@@ -55,13 +55,13 @@ export default function Pagination({ currentPage, totalPage, onPageChange }) {
                     }
                 }}
             >
-                {'>'}
+                <span>{'>'}</span>
             </li>
             <li
                 className={`${movePageClassName} ${canMoveNextClassName}`}
                 onClick={() => onPageChange(totalPage)}
             >
-                {'>>|'}
+                <span>{'>>|'}</span>
             </li>
         </ul>
     )

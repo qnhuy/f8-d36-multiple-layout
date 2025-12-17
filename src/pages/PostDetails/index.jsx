@@ -24,13 +24,12 @@ export default function PostDetails() {
                 setPost(postData)
                 setComments(commentData)
             })
-            .catch(() => navigate('/posts'))
+            .catch(() => navigate('/posts', { replace: true }))
             .finally(() => setIsLoading(false))
     }, [])
 
     return (
         <div className={styles.postDetailsContainer}>
-            <h1>PostDetails</h1>
             {isLoading ? (
                 <Loading />
             ) : (
@@ -39,6 +38,9 @@ export default function PostDetails() {
                         <h2 className={styles.postTitle}>{post.title}</h2>
                         <p className={styles.userId}>User ID: {post.userId}</p>
                         <p className={styles.postBody}>{post.body}</p>
+                        <button onClick={() => navigate(-1)}>
+                            Back to Posts
+                        </button>
                     </div>
 
                     <div>

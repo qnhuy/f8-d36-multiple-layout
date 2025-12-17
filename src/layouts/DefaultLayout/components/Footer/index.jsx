@@ -1,14 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
+import styles from './Footer.module.css'
 
 export default function Footer() {
     return (
-        <div>
-            <h1>Footer</h1>
-            <ul>
-                <li><Link to='/'>Homepage</Link></li>
-                <li><Link to='/posts'>Posts</Link></li>
-                <li><Link to='/contact'>Contact</Link></li>
-                <li><Link to='/privacy'>Privacy</Link></li>
+        <div className={styles.footerContainer}>
+            <p className={styles.rights}>
+                &copy; 2025 Ray Dev. All rights reserved
+            </p>
+            <ul className={styles.navList}>
+                <li className={styles.navItem}>
+                    <Link to='/contact' className='text-hover-primary'>
+                        Contact
+                    </Link>
+                </li>
+                <li className={styles.navItem}>
+                    <Link to='/privacy' className='text-hover-primary'>
+                        Privacy
+                    </Link>
+                </li>
             </ul>
         </div>
     )
