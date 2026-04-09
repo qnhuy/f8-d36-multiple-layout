@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react-swc'
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react()],
-    base: '/f8-d36-multiple-layout',
+    base: '/',
 })
